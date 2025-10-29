@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Matter Gateway (PMG) 產品介紹</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Calm Harmony (Slate, Stone, Soft Teal Accent) -->
+    <!-- Application Structure Plan: Designed as a single-page product landing page. The structure guides the user from the problem (cloud privacy) to the solution (PMG) and its key features. The flow is: Hero (Intro) -> Problem/Solution (What is PMG?) -> Key Features (Why PMG?) -> How it Works (Visual Demo) -> Tech Specs -> CTA. This structure is standard for product marketing and effectively communicates the device's value proposition, which is the goal of a "product introduction document". -->
+    <!-- Visualization & Content Choices: Report Info: "Private Matter Gateway / 匿蹤遠端存取" device intro. Goal: Explain the product's function and value. Viz/Presentation: Used HTML/CSS/Tailwind to create feature cards (Organize/Inform) and two simple flow diagrams (Organize/Compare). Interaction: Static page, as it's an introduction. Justification: The prompt is about *what* the product *is*. A clear, descriptive landing page with visual diagrams (made of HTML/CSS) is the most effective way to present this, far better than a static text document. The diagrams are crucial for explaining the "stealth remote access" concept. Library/Method: HTML/CSS/Tailwind only. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .diagram-box {
+            @apply border border-stone-300 rounded-lg p-4 m-2 text-center bg-stone-50 shadow-sm;
+        }
+        .diagram-arrow {
+            @apply text-3xl font-light text-stone-400 mx-2 relative top-1;
+        }
+        .diagram-line {
+            @apply w-full h-0.5 bg-stone-300 my-4;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+
+        <!-- Header / Hero Section -->
+        <header class="text-center py-12 md:py-20 border-b border-stone-200">
+            <h1 class="text-4xl md:text-5xl font-bold text-teal-700">Private Matter Gateway (PMG)</h1>
+            <p class="mt-4 text-2xl md:text-3xl font-light text-stone-600">匿蹤遠端存取裝置</p>
+            <p class="mt-6 text-lg text-stone-700 max-w-2xl mx-auto">
+                重新掌控您的智慧家庭。實現完全私密、無雲端依賴的 Matter 設備遠端存取。
+            </p>
+        </header>
+
+        <main>
+            <!-- Problem / Solution Section -->
+            <section id="intro" class="py-12 md:py-16">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg border border-stone-200">
+                        <h2 class="text-3xl font-bold text-red-600 mb-4">傳統智慧家庭的隱私困境</h2>
+                        <p class="text-lg text-stone-700 leading-relaxed">
+                            您的智慧燈泡、攝影機和感應器是否正持續將資料傳送到未知的雲端伺服器？傳統的遠端存取依賴製造商的雲端，這不僅造成延遲，更讓您的家庭隱私暴露在風險之中。
+                        </p>
+                        <ul class="mt-4 space-y-2 text-stone-600">
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">✗</span> 數據經由第三方伺服器
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">✗</span> 網路中斷即癱瘓
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">✗</span> 隱私外洩風險高
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg border border-teal-300 bg-teal-50">
+                        <h2 class="text-3xl font-bold text-teal-700 mb-4">PMG：您的家庭隱私閘道</h2>
+                        <p class="text-lg text-stone-700 leading-relaxed">
+                            Private Matter Gateway (PMG) 徹底改變這一切。它是一款本地優先的硬體設備，作為您家中所有 Matter 裝置的核心，並建立一條專屬於您的「匿蹤通道」，讓您在外部也能安全、直接地連回家中，無需任何雲端中介。
+                        </p>
+                        <ul class="mt-4 space-y-2 text-stone-700">
+                            <li class="flex items-center">
+                                <span class="text-teal-600 font-bold mr-2">✓</span> 點對點加密遠端存取
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-teal-600 font-bold mr-2">✓</span> 100% 本地處理，零延遲
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-teal-600 font-bold mr-2">✓</span> 數據永遠留在您家中
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Features Section -->
+            <section id="features" class="py-12 md:py-16 bg-white rounded-lg shadow-md border border-stone-200 px-8">
+                <h2 class="text-center text-3xl font-bold mb-12">核心功能</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="text-5xl mb-4">🔒</div>
+                        <h3 class="text-xl font-semibold text-teal-700 mb-2">匿蹤遠端存取</h3>
+                        <p class="text-stone-600">
+                            無論您身在何處，都能透過端對端加密通道安全連線。您的行蹤與操作完全保密，如同人就在家中。
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="text-5xl mb-4">🏠</div>
+                        <h3 class="text-xl font-semibold text-teal-700 mb-2">Matter 核心中樞</h3>
+                        <p class="text-stone-600">
+                            完整支援 Matter 協定，可同時作為 Wi-Fi、Thread 與乙太網路裝置的控制器，打破品牌壁壘，實現全屋互聯。
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="text-5xl mb-4">☁️</div>
+                        <h3 class="text-xl font-semibold text-teal-700 mb-2">雲端防火牆</h3>
+                        <p class="text-stone-600">
+                            PMG 主動阻擋智慧裝置非必要的對外連線。您可以自行決定哪些設備可以存取網際網路，杜絕資料偷渡。
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- How it Works Section -->
+            <section id="how-it-works" class="py-12 md:py-16">
+                <h2 class="text-center text-3xl font-bold mb-12">運作原理比較</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Traditional Way -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-center mb-4 text-red-600">傳統雲端方式 (高風險)</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                            <div class="flex flex-col items-center">
+                                <div class="diagram-box w-3/4">📱 <span class="ml-2">您 (在外部)</span></div>
+                                <div class="diagram-arrow">↓</div>
+                                <div class="diagram-box w-full border-red-300 bg-red-50">☁️ <span class="ml-2">製造商雲端伺服器 (資料中介)</span></div>
+                                <div class="diagram-arrow">↓</div>
+                                <div class="diagram-box w-3/4">🏠 <span class="ml-2">您的智慧裝置</span></div>
+                            </div>
+                            <div class="diagram-line"></div>
+                            <p class="text-stone-600 text-sm">
+                                您的所有指令和家庭數據都必須上傳到第三方雲端，再傳送回家中。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PMG Way -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-center mb-4 text-teal-700">PMG 匿蹤存取 (高安全)</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-teal-300">
+                            <div class="flex flex-col items-center">
+                                <div class="diagram-box w-3/4">📱 <span class="ml-2">您 (在外部)</span></div>
+                                <div class="text-stone-400 font-mono text-sm my-1">加密通道 (P2P)</div>
+                                <div class="w-1 h-8 bg-teal-500 border-l-2 border-r-2 border-dashed border-teal-200"></div>
+                                <div class="diagram-box w-full border-teal-300 bg-teal-50">🛡️ <span class="ml-2">PMG (您的私人閘道)</span></div>
+                                <div class="diagram-arrow">↓</div>
+                                <div class="diagram-box w-3/4">🏠 <span class="ml-2">您的智慧裝置</span></div>
+                            </div>
+                            <div class="diagram-line"></div>
+                            <p class="text-stone-600 text-sm">
+                                PMG 建立一條點對點的加密直線。數據不落地，只有您和您的家知道。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Tech Specs Section -->
+            <section id="specs" class="py-12 md:py-16 bg-stone-100 rounded-lg border border-stone-200 px-8">
+                <h2 class="text-center text-3xl font-bold mb-12">硬體規格</h2>
+                <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+                    <ul class="space-y-4 text-stone-700">
+                        <li class="flex justify-between border-b pb-2">
+                            <span class="font-semibold">處理器:</span>
+                            <span>四核心 ARM Cortex-A55</span>
+                        </li>
+                        <li class="flex justify-between border-b pb-2">
+                            <span class="font-semibold">記憶體:</span>
+                            <span>2GB LPDDR4</span>
+                        </li>
+                        <li class="flex justify-between border-b pb-2">
+                            <span class="font-semibold">儲存空間:</span>
+                            <span>16GB eMMC</span>
+                        </li>
+                        <li class="flex justify-between border-b pb-2">
+                            <span class="font-semibold">網路連線:</span>
+                            <span>Gigabit 乙太網路</span>
+                        </li>
+                        <li class="flex justify-between border-b pb-2">
+                            <span class="font-semibold">智慧連線:</span>
+                            <span>Wi-Fi 6 (Matter)</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="font-semibold"></span>
+                            <span>Thread (Matter)</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer / CTA -->
+        <footer class="text-center py-16 mt-16 border-t border-stone-200">
+            <h2 class="text-3xl font-bold mb-4">準備好迎接真正的智慧隱私了嗎？</h2>
+            <p class="text-lg text-stone-700 mb-8 max-w-xl mx-auto">
+                PMG 匿蹤遠端存取裝置即將推出。加入等候清單，獲取第一手產品資訊與早鳥優惠。
+            </p>
+            <button class="bg-teal-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-teal-700 transition duration-300 shadow-md">
+                加入等候清單
+            </button>
+            <p class="mt-8 text-sm text-stone-500">
+                &copy; 2025 Private Matter Solutions. 版權所有。
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
